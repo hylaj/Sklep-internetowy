@@ -5,9 +5,12 @@ Projekt zaliczeniowy realizujący funkcjonalność prostego sklepu internetowego
 ## Autor
 1. Jolanta Hyla  (410471) 
 
-## Uruchomienie projektu
+### Wymagania wstępne
+* Zainstalowane środowisko **Node.js** (wersja LTS).
 
-1. Sklonuj repozytorium.
-2. Zainstaluj zależności:
-   ```bash
-   npm install
+### Krok 1: Instalacja zależności
+Po pobraniu projektu (sklonowaniu repozytorium lub rozpakowaniu archiwum), otwórz terminal w głównym folderze projektu i wykonaj komendę:
+
+```bash
+npm install
+
