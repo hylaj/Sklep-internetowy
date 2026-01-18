@@ -34,12 +34,14 @@ export const ShopProvider = ({ children }) => {
 
   const clearCart = () => setCart([]);
 
-  const placeOrder = () => {
+const placeOrder = (userData) => {
     const newOrder = {
       id: Date.now(),
       date: new Date().toLocaleString(),
       items: cart,
       total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
+      // TUTAJ DODAJEMY PODPIS: Kto złożył zamówienie
+      username: userData.username, 
     };
 
     const updatedOrders = [...orders, newOrder];

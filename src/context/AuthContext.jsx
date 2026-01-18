@@ -1,13 +1,16 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 
 const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  // ZMIANA: Inicjalizacja stanu z localStorage zamiast null
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem("user");
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
 
-  // Lista dozwolonych użytkowników (Mock)
   const usersDB = [
     { username: "student1", password: "123", role: "student" },
     { username: "student2", password: "123", role: "student" },
@@ -20,6 +23,8 @@ export const AuthProvider = ({ children }) => {
     );
     if (foundUser) {
       setUser(foundUser);
+      // ZMIANA: Zapisanie użytkownika w przeglądarce
+      localStorage.setItem("user", JSON.stringify(foundUser));
       return true;
     }
     return false;
@@ -27,10 +32,11 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setUser(null);
+    // ZMIANA: Wyczyszczenie pamięci przeglądarki
+    localStorage.removeItem("user");
   };
 
   const register = (username, password) => {
-    // Prosta symulacja rejestracji (dodaje do lokalnej zmiennej tymczasowo)
     usersDB.push({ username, password, role: "student" });
     return true;
   };
