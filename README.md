@@ -16,6 +16,7 @@ Projekt zaliczeniowy realizujący funkcjonalność sklepu internetowego (SPA) z 
 * Zainstalowane środowisko **Node.js** (wersja LTS).
 
 ### Instrukcja instalacji
+
 1. Otwórz terminal w głównym folderze projektu.
 2. Zainstaluj zależności:
    ```bash
@@ -24,7 +25,7 @@ Projekt zaliczeniowy realizujący funkcjonalność sklepu internetowego (SPA) z 
 ```
 
 3. Uruchom serwer deweloperski:
-   ```bash
+```bash
 npm run dev
 
 ```
