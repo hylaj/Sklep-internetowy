@@ -23,8 +23,8 @@ Projekt zaliczeniowy realizujący funkcjonalność sklepu internetowego (SPA) z 
 ```
 
 3. Uruchom serwer deweloperski:
-```bash
-npm run dev
+   ```bash
+   npm run dev
 
 ```
 
