@@ -26,7 +26,7 @@ Projekt zaliczeniowy realizujący funkcjonalność sklepu internetowego (SPA) z 
    ```bash
    npm run dev
 
-```
+
 
 
 4. Otwórz przeglądarkę pod adresem wskazanym w terminalu (zazwyczaj `http://localhost:5173`).
