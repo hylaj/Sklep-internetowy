@@ -1,11 +1,12 @@
+
 ```markdown
 # Sklep Internetowy (React)
 
 Projekt zaliczeniowy realizujący funkcjonalność sklepu internetowego (SPA) z wykorzystaniem zewnętrznego API FakeStore. Aplikacja umożliwia przeglądanie produktów, zarządzanie koszykiem, składanie zamówień oraz dodawanie opinii.
 
 ## Autorzy
-1. **[Jolanta Hyla]**
-2. **[Gabriela Orłowska]** 
+1. **[Imię i Nazwisko Osoby 1]** (nr albumu)
+2. **[Imię i Nazwisko Osoby 2]** (nr albumu)
 
 ---
 
@@ -17,9 +18,9 @@ Projekt zaliczeniowy realizujący funkcjonalność sklepu internetowego (SPA) z 
 ### Instrukcja instalacji
 1. Otwórz terminal w głównym folderze projektu.
 2. Zainstaluj zależności:
-
-```bash
+   ```bash
    npm install
+
 ```
 
 3. Uruchom serwer deweloperski:
@@ -28,7 +29,8 @@ npm run dev
 
 ```
 
-4. Otwórz przeglądarkę pod adresem wskazanym w terminalu.
+
+4. Otwórz przeglądarkę pod adresem wskazanym w terminalu (zazwyczaj `http://localhost:5173`).
 
 ---
 
@@ -87,6 +89,7 @@ Projekt realizuje wymagania na ocenę (18 pkt), w tym:
 * **Historia Zamówień:**
 * Zwykły użytkownik widzi tylko swoje zamówienia.
 * Admin widzi zamówienia wszystkich użytkowników.
+
 
 * **Zaawansowane Opinie:**
 * Formularz z oceną gwiazdkową (1-5).
