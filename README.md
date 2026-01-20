@@ -1,13 +1,12 @@
 
-```markdown
 
 # Sklep Internetowy (React)
 
 Projekt zaliczeniowy realizujący funkcjonalność sklepu internetowego (SPA) z wykorzystaniem zewnętrznego API FakeStore. Aplikacja umożliwia przeglądanie produktów, zarządzanie koszykiem, składanie zamówień oraz dodawanie opinii.
 
 ## Autorzy
-1. **[Imię i Nazwisko Osoby 1]** (nr albumu)
-2. **[Imię i Nazwisko Osoby 2]** (nr albumu)
+1. **Jolanta Hyla** 
+2. **Gabriela Orłowska** 
 
 ---
 
