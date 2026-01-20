@@ -20,7 +20,7 @@ Projekt zaliczeniowy realizujący funkcjonalność sklepu internetowego (SPA) z 
    ```bash
    npm install
 
-```
+
 
 3. Uruchom serwer deweloperski:
    ```bash
