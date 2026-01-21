@@ -93,7 +93,7 @@ Projekt realizuje wymagania na ocenę (18 pkt), w tym:
 * **Trwałość:** Opinie są zapisywane w pamięci przeglądarki.
 * **Usuwanie:**
    * Użytkownik może usunąć tylko swoją opinię.
-   * Admin (Teacher) ma uprawnienie do usuwania dowolnej opinii.
+   * Admin ma uprawnienie do usuwania dowolnej opinii.
 
 ---
 
