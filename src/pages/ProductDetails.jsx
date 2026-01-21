@@ -354,7 +354,7 @@ const ProductDetails = () => {
                       </Button>
                     )}
                   </div>
-                  {/* -------------------------------------- */}
+                  {}
 
                 </div>
                 <div className="mb-2">
