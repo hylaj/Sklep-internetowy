@@ -1,34 +1,28 @@
-
-```markdown
 # Sklep Internetowy (React)
 
 Projekt zaliczeniowy realizujący funkcjonalność sklepu internetowego (SPA) z wykorzystaniem zewnętrznego API FakeStore. Aplikacja umożliwia przeglądanie produktów, zarządzanie koszykiem, składanie zamówień oraz dodawanie opinii.
 
 ## Autorzy
-1. **[Imię i Nazwisko Osoby 1]** (nr albumu)
-2. **[Imię i Nazwisko Osoby 2]** (nr albumu)
+1. **Jolanta Hyla**
+2. **Gabriela Orłowska**
 
 ---
 
 ## Uruchomienie Projektu
 
 ### Wymagania wstępne
-* Zainstalowane środowisko **Node.js** (wersja LTS).
+* Zainstalowane środowisko **Node.js**.
 
 ### Instrukcja instalacji
+
 1. Otwórz terminal w głównym folderze projektu.
 2. Zainstaluj zależności:
    ```bash
    npm install
 
-```
-
 3. Uruchom serwer deweloperski:
-```bash
-npm run dev
-
-```
-
+   ```bash
+   npm run dev
 
 4. Otwórz przeglądarkę pod adresem wskazanym w terminalu (zazwyczaj `http://localhost:5173`).
 
@@ -40,13 +34,15 @@ Aplikacja została zbudowana w oparciu o nowoczesny stos technologiczny React (V
 
 * **Core:** React 19, Vite
 * **Routing:** React Router DOM (v7) – nawigacja bez przeładowania strony.
-* **UI & Stylizacja:** * React Bootstrap – responsywne komponenty (Grid, Cards, Forms).
+* **UI & Stylizacja:**
+* React Bootstrap – responsywne komponenty (Grid, Cards, Forms).
 * Bootstrap Icons – ikony systemowe.
 * CSS Modules / Custom CSS – nowoczesny wygląd (Glassmorphism, cienie).
 
 
 * **Stan i Logika:** Context API (`ShopContext`, `AuthContext`) – zarządzanie koszykiem i sesją użytkownika.
-* **Dodatki:** * `react-hot-toast` – estetyczne powiadomienia (Toasty).
+* **Dodatki:**
+* `react-hot-toast` – estetyczne powiadomienia (Toasty).
 * `localStorage` – trwałość danych (sesja, koszyk, historia, opinie).
 
 
@@ -61,7 +57,6 @@ Aplikacja posiada zamockowany system autentykacji. Do testowania uprawnień nale
 | --- | --- | --- | --- |
 | **Student** | `student1` | `123` | Składanie zamówień, dodawanie opinii, historia własna. |
 | **Admin** | `admin` | `admin` | Podgląd historii wszystkich użytkowników (rola Nauczyciel). |
-
 
 ---
 
@@ -82,7 +77,7 @@ Projekt realizuje wymagania na ocenę (18 pkt), w tym:
 * **Kalkulacja:** Automatyczne przeliczanie sumy całkowitej.
 * **Security Guard:** Próba wejścia do koszyka/zamówienia bez logowania automatycznie przekierowuje do panelu logowania.
 
-### 3. Funkcje dla Zalogowanych 
+### 3. Funkcje dla Zalogowanych
 
 * **Trwała Sesja:** Użytkownik pozostaje zalogowany po odświeżeniu strony (`localStorage`).
 * **Składanie Zamówień:** Symulacja procesu checkout – zamówienie trafia do historii, koszyk jest czyszczony.
@@ -91,7 +86,7 @@ Projekt realizuje wymagania na ocenę (18 pkt), w tym:
 * Admin widzi zamówienia wszystkich użytkowników.
 
 
-* **Zaawansowane Opinie:**
+* **Opinie:**
 * Formularz z oceną gwiazdkową (1-5).
 * Walidacja (wymagany email i treść).
 * **Limit:** Blokada dodawania więcej niż jednej opinii dla tego samego produktu przez jednego użytkownika.
@@ -105,14 +100,12 @@ Projekt realizuje wymagania na ocenę (18 pkt), w tym:
 
 ```text
 src/
-├── components/       # Komponenty globalne (Nawigacja, Stopka)
-├── context/          # Logika biznesowa (AuthContext, ShopContext)
-├── pages/            # Widoki podstron (Home, Cart, Login, ProductDetails...)
-├── App.jsx           # Główny komponent z Routingiem
-└── main.jsx          # Punkt wejścia aplikacji
+├── components/
+├── context/
+├── pages/
+├── App.jsx
+└── main.jsx
 
 ```
 
-```
 
-```
