@@ -50,7 +50,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     setLoading(true);
-    // 1. Pobranie danych produktu
+    //  Pobranie danych produktu
     fetch(`https://fakestoreapi.com/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
@@ -59,7 +59,7 @@ const ProductDetails = () => {
       })
       .catch(() => setLoading(false));
 
-    // 2. Pobranie opinii z LocalStorage (Persistence)
+    // Pobranie opinii z LocalStorage 
     const savedReviews = localStorage.getItem(`reviews_${id}`);
     if (savedReviews) {
       setReviews(JSON.parse(savedReviews));
@@ -69,7 +69,7 @@ const ProductDetails = () => {
   }, [id]);
 
   const handleAddToCart = () => {
-    // Prosta walidacja ilości magazynowej
+    // walidacja ilości magazynowej
     if (product.rating.count < quantity) {
         toast.error(`Mamy tylko ${product.rating.count} sztuk tego produktu!`);
         return;
@@ -124,6 +124,18 @@ const ProductDetails = () => {
     toast.success("Opinia dodana pomyślnie!");
   };
 
+  // Odpowiada za logikę usuwania komentarza z listy i z pamięci przeglądarki
+  const handleDeleteReview = (reviewIndex) => {
+    // Filtrujemy tablicę, usuwając element o konkretnym indeksie
+    const updatedReviews = reviews.filter((_, index) => index !== reviewIndex);
+    
+    // Aktualizujemy stan i localStorage
+    setReviews(updatedReviews);
+    localStorage.setItem(`reviews_${id}`, JSON.stringify(updatedReviews));
+    
+    toast.success("Opinia została usunięta.");
+  };
+
   if (loading || !product)
     return (
       <Container className="text-center mt-5" style={{ minHeight: "60vh" }}>
@@ -155,7 +167,7 @@ const ProductDetails = () => {
                 {product.category}
              </Badge>
              
-             {/* --- NOWE: Wyświetlanie dostępnej ilości --- */}
+             {/* Wyświetlanie dostępnej ilości */}
              <Badge bg={product.rating.count > 50 ? "success" : "danger"} className="mb-2">
                 <i className="bi bi-box-seam me-1"></i>
                 Dostępna ilość: {product.rating.count} szt.
@@ -176,7 +188,7 @@ const ProductDetails = () => {
 
           <p className="text-muted leading-relaxed">{product.description}</p>
 
-          {/* Sekcja Trust Signals (Wygląd Pro) */}
+          {/* Sekcja Trust Signals */}
           <div className="d-flex gap-4 my-4 py-3 border-top border-bottom bg-light px-3 rounded-3">
             <div className="d-flex align-items-center text-dark">
               <i className="bi bi-truck fs-4 me-2 text-primary"></i>
@@ -319,10 +331,31 @@ const ProductDetails = () => {
               <ListGroup.Item key={idx} className="bg-transparent border-bottom py-4">
                 <div className="d-flex justify-content-between align-items-start mb-2">
                   <div>
-                     <strong className="d-block">{rev.username}</strong>
+                     <strong className="d-block">
+                        {rev.username}
+                        {user && user.username === rev.username && " (Ty)"}
+                     </strong>
                      <small className="text-muted">{rev.email}</small>
                   </div>
-                  <small className="text-muted">{rev.date}</small>
+
+                  {}
+                  <div className="d-flex align-items-center gap-3">
+                    <small className="text-muted">{rev.date}</small>
+                    
+                    {/* Przycisk usuwania opinii */}
+                    {user && (user.role === "teacher" || user.username === rev.username) && (
+                      <Button 
+                        variant="outline-danger" 
+                        size="sm" 
+                        onClick={() => handleDeleteReview(idx)}
+                        title="Usuń opinię"
+                      >
+                        <i className="bi bi-trash"></i>
+                      </Button>
+                    )}
+                  </div>
+                  {/* -------------------------------------- */}
+
                 </div>
                 <div className="mb-2">
                   <StarRating count={rev.rating} />

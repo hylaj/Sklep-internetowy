@@ -5,7 +5,6 @@ const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
-  // ZMIANA: Inicjalizacja stanu z localStorage zamiast null
   const [user, setUser] = useState(() => {
     const savedUser = localStorage.getItem("user");
     return savedUser ? JSON.parse(savedUser) : null;
@@ -23,7 +22,6 @@ export const AuthProvider = ({ children }) => {
     );
     if (foundUser) {
       setUser(foundUser);
-      // ZMIANA: Zapisanie użytkownika w przeglądarce
       localStorage.setItem("user", JSON.stringify(foundUser));
       return true;
     }
@@ -32,7 +30,6 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setUser(null);
-    // ZMIANA: Wyczyszczenie pamięci przeglądarki
     localStorage.removeItem("user");
   };
 

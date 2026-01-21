@@ -1,6 +1,6 @@
 import { Container, Accordion, Table, Badge, Alert } from "react-bootstrap";
 import { useShop } from "../context/ShopContext";
-import { useAuth } from "../context/AuthContext"; // Importujemy Auth
+import { useAuth } from "../context/AuthContext";
 
 const Orders = () => {
   const { orders } = useShop();
@@ -10,9 +10,7 @@ const Orders = () => {
     return <Container className="mt-4"><p>Zaloguj się, aby zobaczyć historię.</p></Container>;
   }
 
-  // LOGIKA FILTROWANIA:
-  // Jeśli user ma rolę "teacher" (Admin) -> widzi wszystkie zamówienia
-  // Jeśli user to student -> widzi tylko zamówienia gdzie order.username == user.username
+  
   const userOrders = user.role === "teacher" 
     ? orders 
     : orders.filter((order) => order.username === user.username);

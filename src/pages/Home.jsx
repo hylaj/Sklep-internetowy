@@ -10,7 +10,6 @@ const Home = () => {
   const [activeCategory, setActiveCategory] = useState("all");
 
   useEffect(() => {
-    // Pobieramy produkty i kategorie równolegle
     const fetchData = async () => {
       try {
         const [prodRes, catRes] = await Promise.all([
@@ -31,7 +30,7 @@ const Home = () => {
     fetchData();
   }, []);
 
-  // Logika filtrowania (Szukanie + Kategoria)
+  // Logika filtrowania 
   const filteredProducts = products.filter((product) => {
     const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = activeCategory === "all" || product.category === activeCategory;

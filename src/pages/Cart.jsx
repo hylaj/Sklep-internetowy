@@ -1,7 +1,6 @@
 import { Container, Table, Button } from "react-bootstrap";
 import { useShop } from "../context/ShopContext";
 import { useAuth } from "../context/AuthContext";
-// ZMIANA: Dodano Navigate do importów
 import { Link, useNavigate, Navigate } from "react-router-dom";
 
 const Cart = () => {
@@ -9,7 +8,7 @@ const Cart = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
 
-  // ZMIANA: Jeśli brak usera -> natychmiastowy skok do logowania
+  //Jeśli brak usera -> natychmiastowy skok do logowania
   if (!user) {
     return <Navigate to="/login" replace />;
   }

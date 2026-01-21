@@ -14,7 +14,6 @@ const Navigation = () => {
   };
 
   return (
-    // ZMIANA: Usunięto bg="dark" i variant="dark", dodano klasę navbar-custom
     <Navbar expand="lg" className="navbar-custom sticky-top mb-4">
       <Container>
         <Navbar.Brand as={Link} to="/">

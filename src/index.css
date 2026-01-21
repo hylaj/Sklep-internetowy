@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 :root {
-  --primary-color: #4f46e5; /* Indigo */
+  --primary-color: #4f46e5;
   --secondary-color: #818cf8;
-  --accent-color: #f59e0b; /* Amber for actions */
+  --accent-color: #f59e0b; 
   --bg-color: #f3f4f6;
   --card-bg: #ffffff;
   --text-dark: #1f2937;
@@ -16,7 +16,7 @@ body {
   color: var(--text-dark);
 }
 
-/* --- Nowoczesny Navbar --- */
+/* ---  Navbar --- */
 .navbar-custom {
   background: rgba(255, 255, 255, 0.95) !important;
   backdrop-filter: blur(10px);
@@ -41,7 +41,7 @@ body {
   color: var(--primary-color) !important;
 }
 
-/* --- Karty Produktów (Hover Effect) --- */
+/* --- Karty Produktów (Hover) --- */
 .product-card {
   border: none;
   border-radius: 16px;

@@ -8,7 +8,7 @@ export const ShopProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [orders, setOrders] = useState([]);
 
-  // Ładowanie historii z localStorage (żeby nie znikała po odświeżeniu)
+  // Ładowanie historii z localStorage 
   useEffect(() => {
     const savedOrders = localStorage.getItem("orderHistory");
     if (savedOrders) setOrders(JSON.parse(savedOrders));
@@ -40,7 +40,6 @@ const placeOrder = (userData) => {
       date: new Date().toLocaleString(),
       items: cart,
       total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
-      // TUTAJ DODAJEMY PODPIS: Kto złożył zamówienie
       username: userData.username, 
     };
 
