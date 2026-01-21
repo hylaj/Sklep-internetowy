@@ -91,8 +91,9 @@ Projekt realizuje wymagania na ocenę (18 pkt), w tym:
 * Walidacja (wymagany email i treść).
 * **Limit:** Blokada dodawania więcej niż jednej opinii dla tego samego produktu przez jednego użytkownika.
 * **Trwałość:** Opinie są zapisywane w pamięci przeglądarki.
-
-
+* **Usuwanie:**
+   * Użytkownik może usunąć tylko swoją opinię.
+   * Admin (Teacher) ma uprawnienie do usuwania dowolnej opinii.
 
 ---
 
