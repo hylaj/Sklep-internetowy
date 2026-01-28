@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-color: #4f46e5;
+  --secondary-color: #818cf8;
+  --accent-color: #f59e0b; 
+  --bg-color: #f3f4f6;
+  --card-bg: #ffffff;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+}
+
+/* ---  Navbar --- */
+.navbar-custom {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary-color) !important;
+  letter-spacing: -0.5px;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--text-dark) !important;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* --- Karty Produktów (Hover) --- */
+.product-card {
+  border: none;
+  border-radius: 16px;
+  background: var(--card-bg);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.card-img-wrapper {
+  height: 200px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.card-img-wrapper img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .card-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price-tag {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* --- Przyciski --- */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #4338ca;
+  border-color: #4338ca;
+  transform: scale(1.02);
+}
+
+.btn-success {
+  background-color: #10b981;
+  border: none;
+}
+
+/* --- Hero Section (Baner) --- */
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 4rem 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}

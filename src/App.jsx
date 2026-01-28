@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast"; 
 import { AuthProvider } from "./context/AuthContext";
 import { ShopProvider } from "./context/ShopContext";
 import Navigation from "./components/Navigation";
+import Footer from "./components/Footer"; 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import ProductDetails from "./pages/ProductDetails";
@@ -13,22 +15,21 @@ function App() {
     <Router>
       <AuthProvider>
         <ShopProvider>
+          {/* Konfiguracja powiadomień */}
+          <Toaster position="top-center" toastOptions={{ duration: 3000 }} />
+          
           <div className="d-flex flex-column min-vh-100">
             <Navigation />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/product/:id" element={<ProductDetails />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/orders" element={<Orders />} />
-            </Routes>
-            <footer className="mt-auto py-3 bg-light text-center">
-              <div className="container">
-                <span className="text-muted">
-                  Sklep Internetowy &copy; 2026
-                </span>
-              </div>
-            </footer>
+            <div className="flex-grow-1">
+               <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/product/:id" element={<ProductDetails />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/orders" element={<Orders />} />
+              </Routes>
+            </div>
+            <Footer />
           </div>
         </ShopProvider>
       </AuthProvider>

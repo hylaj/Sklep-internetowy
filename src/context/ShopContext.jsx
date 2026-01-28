@@ -8,7 +8,7 @@ export const ShopProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [orders, setOrders] = useState([]);
 
-  // Ładowanie historii z localStorage (żeby nie znikała po odświeżeniu)
+  // Ładowanie historii z localStorage 
   useEffect(() => {
     const savedOrders = localStorage.getItem("orderHistory");
     if (savedOrders) setOrders(JSON.parse(savedOrders));
@@ -34,12 +34,13 @@ export const ShopProvider = ({ children }) => {
 
   const clearCart = () => setCart([]);
 
-  const placeOrder = () => {
+const placeOrder = (userData) => {
     const newOrder = {
       id: Date.now(),
       date: new Date().toLocaleString(),
       items: cart,
       total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
+      username: userData.username, 
     };
 
     const updatedOrders = [...orders, newOrder];
